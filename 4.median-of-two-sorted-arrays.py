@@ -17,6 +17,7 @@ class Solution(object):
              return self.kth(nums1, nums2, l // 2)
         else:
              return (self.kth(nums1, nums2, l // 2) + self.kth(nums1, nums2, l // 2 - 1)) / 2.   
+      #גשחגחןחשן
     
     def kth(self, a, b, k):
        if not a:
