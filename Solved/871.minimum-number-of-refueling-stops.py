@@ -24,7 +24,6 @@ class Solution(object):
             current_fuel -= distance
             
             while current_fuel < 0 and available_fuel:
-                # Get the station with most fuel
                 available_fuel.sort()
                 current_fuel += available_fuel.pop()
                 stops += 1

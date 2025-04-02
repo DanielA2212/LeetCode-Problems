@@ -14,10 +14,10 @@ class Solution(object):
         from math import gcd
         from functools import reduce
 
-        # Calculate the GCD of all numbers in the array
+        #write fumctions manually (or take and give credit + URL)
+
         overall_gcd = reduce(gcd, nums)
 
-        # If the GCD is 1, return True; otherwise, return False
         return overall_gcd == 1
         
 # @lc code=end
