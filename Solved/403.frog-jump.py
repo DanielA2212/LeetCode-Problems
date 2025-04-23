@@ -11,14 +11,7 @@ class Solution(object):
         :type stones: List[int]
         :rtype: bool
         """
-        # @lc code=start
-class Solution(object):
-    def canCross(self, stones):
-        """
-        :type stones: List[int]
-        :rtype: bool
-        """
-
+        
         # A dict to store possible jump sizes for each stone
         jumpsDict = {stone: set() for stone in stones}
         jumpsDict[0].add(0)  # Start at the first stone with a jump size of 0
