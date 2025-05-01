@@ -11,6 +11,7 @@ class Solution(object):
         :type machines: List[int]
         :rtype: int
         """
+        
         total = sum(machines)
         n = len(machines)
 
