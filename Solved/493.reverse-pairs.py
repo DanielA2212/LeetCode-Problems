@@ -12,25 +12,23 @@ class Solution(object):
         :rtype: int
         """
 
-        # Base case: If the array is empty, there are no reverse pairs
+        # If the array is empty, there are no reverse pairs
         if not nums:
             return 0
 
         # Credit to: https://www.w3schools.com/dsa/dsa_algo_mergesort.php for modified merge sort
         def mergeSort(nums, left, right):
 
-            # Base case: If the subarray has one or zero elements, no reverse pairs
+            # If the subarray has one or zero elements, no reverse pairs
             if left >= right:
                 return 0
 
             mid = (left + right) // 2
-
-            # Recursively count reverse pairs in the left and right halves
+            # Recursively count reverse pairs in the left and right subarrays
             count = mergeSort(nums, left, mid) + mergeSort(nums, mid + 1, right)
 
             j = mid + 1
-
-            # Iterate through the left half to count reverse pairs
+            # Go through the left subarray to count reverse pairs
             for i in range(left, mid + 1):
 
                 # Move the right pointer while nums[i] > 2 * nums[j]
