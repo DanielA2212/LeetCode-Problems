@@ -16,7 +16,7 @@ class Solution(object):
         if not nums:
             return 0
 
-        # Credit to: https://www.w3schools.com/dsa/dsa_algo_mergesort.php for modified merge sort
+        # Credit to: https://www.w3schools.com/dsa/dsa_algo_mergesort.php for merge sort that we modified
         def mergeSort(nums, left, right):
 
             # If the subarray has one or zero elements, no reverse pairs

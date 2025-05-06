@@ -11,24 +11,30 @@ class Solution(object):
         :type height: List[int]
         :rtype: int
         """
+
         if not height:
             return 0
 
         n = len(height)
-        left_max = [0] * n
-        right_max = [0] * n
-        left_max[0] = height[0]
+        leftMax = [0] * n
+        rightMax = [0] * n
 
+        # Fill the leftMax array
+        # leftMax[i] represents the maximum height to the left of index i
+        leftMax[0] = height[0]
         for i in range(1, n):
-            left_max[i] = max(left_max[i - 1], height[i])
+            leftMax[i] = max(leftMax[i - 1], height[i])
 
-        right_max[n - 1] = height[n - 1]
+        # Fill the rightMax array
+        # rightMax[i] represents the maximum height to the right of index i
+        rightMax[n - 1] = height[n - 1]
         for i in range(n - 2, -1, -1):
-            right_max[i] = max(right_max[i + 1], height[i])
+            rightMax[i] = max(rightMax[i + 1], height[i])
 
+        # Calculate the trapped water at each index
         trapped_water = 0
         for i in range(n):
-            trapped_water += min(left_max[i], right_max[i]) - height[i]
+            trapped_water += min(leftMax[i], rightMax[i]) - height[i]
 
         return trapped_water
         
