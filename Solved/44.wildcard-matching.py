@@ -17,8 +17,8 @@ class Solution(object):
         starPos = -1
         starInS = 0
 
-        iS = 0 
-        jP = 0
+        iS = 0 # For srting
+        jP = 0 # For pattern
 
         while iS < len(s):
             # If characters match or '?', move both pointers

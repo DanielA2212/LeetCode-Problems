@@ -21,7 +21,7 @@ class Solution(object):
         for latter in envelopes:
             left, right = 0, len(longestStack) - 1
 
-            # Find the first element with hight >= of the current latter height
+            # Finds the first element with hight >= of the current latter height
             while left <= right:
                 mid = (left + right) // 2
                 if longestStack[mid][1] >= latter[1]:
@@ -32,6 +32,7 @@ class Solution(object):
             # If current latter hight larger than all elements, add it to the end
             if left == len(longestStack):
                 longestStack.append(latter)
+                
             else:
             # otherwise, replace the first element with hight >= current latter hight
                 longestStack[left] = latter

@@ -4,6 +4,7 @@
 # [127] Word Ladder
 #
 
+from collections import deque
 # @lc code=start
 class Solution(object):
     def ladderLength(self, beginWord, endWord, wordList):
@@ -35,6 +36,7 @@ class Solution(object):
                     if new_word in word_set:
                         if new_word==endWord:
                             return transformation_amount+1
+                        
                         word_queue.append((new_word,transformation_amount+1))
                         word_set.remove(new_word)
 

@@ -11,15 +11,17 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
-        #credit to https://stackoverflow.com/a/11175154 for the gcd function
+
+        # Credit to https://stackoverflow.com/a/11175154 for the gcd function
         def gcd(a, b):
           
             while b:
                 a, b = b, a%b
             return a
         
-        #credit to https://stackoverflow.com/a/9109065 for the reduce function
-        def reduce(func, iterable, start=None):
+        # Credit to https://stackoverflow.com/a/9109065 for the reduce function
+        # The reduce function is used to apply the gcd function cumulatively to the items of nums
+        def reduce(func, iterable, start=None): 
 
             it = iter(iterable)
             if start is None:
@@ -33,7 +35,7 @@ class Solution(object):
             return accum_value
         
 
-        overall_gcd = reduce(gcd, nums)
+        overall_gcd = reduce(gcd, nums) 
         return overall_gcd == 1
         
 # @lc code=end

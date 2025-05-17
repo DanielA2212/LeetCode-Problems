@@ -14,16 +14,18 @@ class Solution(object):
         :rtype: int
         """
 
-        # Use a list to keep track of available fuel from passed stations
+        # A list to keep track of available fuel from passed stations
         available_fuel = []
         
-        # Add the target as a station with 0 fuel to handle the final distance
+        # The target is added as a station with 0 fuel to handle the final distance
         stations.append([target, 0])
         
+
         stops = 0
         current_fuel = startFuel
         prev_location = 0
         
+        # Going through each station
         for location, fuel in stations:
 
             # Calculate distance to current station
@@ -35,19 +37,19 @@ class Solution(object):
             # If we run out of fuel, use fuel from previous stations
             while current_fuel < 0 and available_fuel:
 
-                # Sort and take the largest available fuel
+                # Sort and take the largest available fuel amount
                 available_fuel.sort()
                 current_fuel += available_fuel.pop()
-                stops += 1  # Increment stop count
+                stops += 1  # Stop count
             
-            # If we still don't have enough fuel after using all available
+            # If we still don't have enough fuel after using all available fuel
             if current_fuel < 0:
                 return -1
             
-            # Add current station's fuel to available fuel
+            # Current station's fuel is added to available fuel
             available_fuel.append(fuel)
 
-            # Update previous location
+            # Previous location is updated to current station
             prev_location = location
         
         return stops

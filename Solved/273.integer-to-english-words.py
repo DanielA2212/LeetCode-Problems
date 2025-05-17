@@ -40,7 +40,7 @@ class Solution(object):
             if n > 0:
                 res += d[n] + " "
 
-            # Remove any trailing spaces
+            # Removing any trailing spaces
             return res.strip()
         
         res = ""

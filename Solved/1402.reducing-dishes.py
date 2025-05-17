@@ -22,11 +22,13 @@ class Solution(object):
         
         # Go from the end of the array to the beginning
         for i in range(n - 1, -1, -1):
-            currSum += satisfaction[i]
-            totalSum += currSum
+
+            currSum += satisfaction[i] # This is the current satisfaction
+            totalSum += currSum # This is the sum of the current satisfaction and all previous ones
 
             if totalSum > maxSum:
                 maxSum = totalSum
+
             else:
                 break
         

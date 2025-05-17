@@ -21,8 +21,12 @@ class Solution(object):
 
                 # Try jumos of k-1, k, k+1
                 for nextJump in [jump - 1, jump, jump + 1]:
-                    if (nextJump > 0) and (stone + nextJump in jumpsDict):
+
+                    if (nextJump > 0) and (stone + nextJump in jumpsDict): # Check if the next stone exists
+
+                        # Add the next jump size to the possible jumps for the next stone
                         jumpsDict[stone + nextJump].add(nextJump)
+                        
 
         # Return true if the last stone has any possible jump sizes
         return len(jumpsDict[stones[-1]]) > 0

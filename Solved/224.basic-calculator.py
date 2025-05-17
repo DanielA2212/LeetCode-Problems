@@ -12,7 +12,7 @@ class Solution(object):
         :rtype: int
         """
 
-        # Initialize a stack to handle parentheses
+        # Initialize a stack to handle ( )
         stack = []
 
         result = 0
@@ -25,29 +25,33 @@ class Solution(object):
             if char.isdigit():
                 num = num * 10 + int(char)
             
-            elif char == '+':
-                result += sign * num
 
+            elif char == '+':
+
+                result += sign * num
                 # Reset num and set sign to positive
                 num = 0
                 sign = 1
             
-            elif char == '-':
-                result += sign * num
 
+            elif char == '-':
+
+                result += sign * num
                 # Reset num and set sign to negative
                 num = 0
                 sign = -1
             
+
             elif char == '(':
         
                 # Push current result and sign to stack
                 stack.append((result, sign))
 
-                # Reset result and sign for the new expression inside parentheses
+                # Reset result and sign for the new expression inside the (
                 result = 0
                 sign = 1
             
+
             elif char == ')':
 
                 # Add the last number to result with proper sign
@@ -57,8 +61,9 @@ class Solution(object):
                 # Pop the previous result and sign from stack
                 prev_result, prev_sign = stack.pop()
 
-                # Combine the result inside parentheses with the previous result
+                # Combine the result inside the ( ) with the previous result
                 result = prev_result + prev_sign * result
+        
         
         # Add the last number to result
         return result + sign * num

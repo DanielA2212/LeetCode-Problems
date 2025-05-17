@@ -25,9 +25,9 @@ class Solution(object):
 
         for i in range(n):
             
-            # currSum is the excess of machines[i] over avg
+            # CurrSum is the excess of machines[i] over avg
             currSum += machines[i] - avg
-            maxMoves = max(maxMoves, abs(currSum), machines[i] - avg) # max of current imbalance and the current machine's excess
+            maxMoves = max(maxMoves, abs(currSum), machines[i] - avg) # Max of current imbalance and the current machine's excess
 
         return maxMoves
         

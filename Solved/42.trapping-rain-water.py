@@ -31,12 +31,12 @@ class Solution(object):
         for i in range(n - 2, -1, -1):
             rightMax[i] = max(rightMax[i + 1], height[i])
 
-        # Calculate the trapped water at each index
         trapped_water = 0
         for i in range(n):
+
+            # Water trapped at current index is the minimum of left and right max heights minus the current height (which is the base)
             trapped_water += min(leftMax[i], rightMax[i]) - height[i]
 
         return trapped_water
-        
 # @lc code=end
 

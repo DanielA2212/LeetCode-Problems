@@ -26,6 +26,7 @@ class Solution(object):
                 res = res * (m - i) // (i + 1)
             return res
 
+
         # credit to: https://stackoverflow.com/a/212413 for binary search
         
         left, right = 1, n
