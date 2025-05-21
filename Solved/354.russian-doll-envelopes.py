@@ -17,7 +17,7 @@ class Solution(object):
         envelopes.sort(key=lambda x: (x[0], -x[1]))
         longestStack = [] * len(envelopes)
 
-        # Binary search, credit same as in problem 887 (https://stackoverflow.com/a/212413)
+        # Binary search (with our modification), credit to (https://stackoverflow.com/a/212413)
         for latter in envelopes:
             left, right = 0, len(longestStack) - 1
 

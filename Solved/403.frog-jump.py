@@ -14,12 +14,12 @@ class Solution(object):
         
         # A dict to store possible jump sizes for each stone
         jumpsDict = {stone: set() for stone in stones}
-        jumpsDict[0].add(0)  # Start at the first stone with a jump size of 0
+        jumpsDict[0].add(0) # Start at the first stone with a jump size of 0
 
         for stone in stones:
             for jump in jumpsDict[stone]:
 
-                # Try jumos of k-1, k, k+1
+                # Try jumps of k-1, k, k+1
                 for nextJump in [jump - 1, jump, jump + 1]:
 
                     if (nextJump > 0) and (stone + nextJump in jumpsDict): # Check if the next stone exists
