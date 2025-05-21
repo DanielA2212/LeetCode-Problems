@@ -31,7 +31,7 @@ class Solution(object):
                 res += d[n // 100] + " Hundred "
                 n %= 100
 
-            # Handles (20-90)
+            # Handles (20-99)
             if n >= 20:
                 res += d[n // 10 * 10] + " "
                 n %= 10
