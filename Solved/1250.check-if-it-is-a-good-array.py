@@ -34,8 +34,8 @@ class Solution(object):
                   accum_value = func(accum_value, x)
             return accum_value
         
-
-        overall_gcd = reduce(gcd, nums) 
+        # Compute the GCD of all numbers in the list using the reduce function
+        overall_gcd = reduce(gcd, nums)
         return overall_gcd == 1
         
 # @lc code=end

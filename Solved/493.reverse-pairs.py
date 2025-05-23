@@ -34,13 +34,13 @@ class Solution(object):
                 # Move the right pointer while nums[i] > 2 * nums[j]
                 while j <= right and nums[i] > 2 * nums[j]:
                     j += 1
-                # Add the number of valid pairs for nums[i] to the count
+                # Calculates the number of reverse pair in the right subarray for the current nums[i].
                 count += j - (mid + 1)
 
             # Sort the subarray [left, right] for merging
             nums[left:right + 1] = sorted(nums[left:right + 1])
 
-            # Return the total count in this subarray
+            # Return the total count of reverse pairs in this subarray
             return count
 
         return mergeSort(nums, 0, len(nums) - 1)

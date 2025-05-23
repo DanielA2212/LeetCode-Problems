@@ -28,6 +28,7 @@ class Solution(object):
         while word_queue:
             current_word,transformation_amount=word_queue.popleft()
 
+            # Iterate through each character position in the current word
             for i in range(len(current_word)):
                 for char in alphabet:
                     # Breaking the current word at i and adding a new char at position i
@@ -37,6 +38,7 @@ class Solution(object):
                         if new_word==endWord:
                             return transformation_amount+1
                         
+                        # Add the new word to the queue with an incremented transformation count
                         word_queue.append((new_word,transformation_amount+1))
                         word_set.remove(new_word)
 
